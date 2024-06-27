@@ -263,6 +263,7 @@ class RoboVacEntity(StateVacuumEntity):
             )
         except ModelNotSupportedException:
             self.error_code = "UNSUPPORTED_MODEL"
+            return
 
         self._attr_supported_features = self.vacuum.getHomeAssistantFeatures()
         self._attr_robovac_supported = self.vacuum.getRoboVacFeatures()
